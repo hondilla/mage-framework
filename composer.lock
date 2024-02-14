@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c712c1e2ebda19f3ae10b3bab12024b8",
+    "content-hash": "5dae464f941995a16c3b9fbc304ea06b",
     "packages": [
         {
             "name": "brick/math",
@@ -1821,13 +1821,13 @@
             "version": "dev-edge",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mage-universe/bus.git",
-                "reference": "403df6f9c40df543e7b6a4bc5e356ee5d072c834"
+                "url": "https://github.com/hondilla/mage-bus.git",
+                "reference": "11a620e3f621cce3560727c77043d5e26d517aac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mage-universe/bus/zipball/403df6f9c40df543e7b6a4bc5e356ee5d072c834",
-                "reference": "403df6f9c40df543e7b6a4bc5e356ee5d072c834",
+                "url": "https://api.github.com/repos/hondilla/mage-bus/zipball/11a620e3f621cce3560727c77043d5e26d517aac",
+                "reference": "11a620e3f621cce3560727c77043d5e26d517aac",
                 "shasum": ""
             },
             "require": {
@@ -1845,18 +1845,11 @@
                 "psalm/plugin-phpunit": "^0.18.4",
                 "roave/security-advisories": "dev-latest",
                 "symfony/var-dumper": "^7.0.3",
-                "symplify/easy-coding-standard": "^12.1.10",
-                "vimeo/psalm": "^5.21.1"
+                "symplify/easy-coding-standard": "^12.1.12",
+                "vimeo/psalm": "^5.22.0"
             },
             "default-branch": true,
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Mage\\Bus\\Bridge\\BusServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Mage\\Bus\\": "src/"
@@ -1910,10 +1903,9 @@
                 "omatech"
             ],
             "support": {
-                "source": "https://github.com/mage-universe/bus/tree/edge",
-                "issues": "https://github.com/mage-universe/bus/issues"
+                "source": "https://github.com/hondilla/mage-bus/tree/edge"
             },
-            "time": "2024-02-14T17:31:40+00:00"
+            "time": "2024-02-14T21:27:00+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -12292,7 +12284,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": "^8.3"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"

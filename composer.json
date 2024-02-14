@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "php": "^8.2",
+    "php": "^8.3",
     "lambdish/phunctional": "v2.1.0",
     "laravel/framework": "^11.x-dev",
     "mage-universe/bus": "dev-edge"
@@ -30,14 +30,14 @@
     "psalm/plugin-phpunit": "^0.18.4",
     "roave/security-advisories": "dev-latest",
     "symfony/var-dumper": "^7.0.3",
-    "symplify/easy-coding-standard": "^12.1.10",
-    "vimeo/psalm": "^5.21.1",
+    "symplify/easy-coding-standard": "^12.1.12",
+    "vimeo/psalm": "^5.22.0",
     "orchestra/testbench": "^9.x-dev"
   },
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/mage-universe/bus.git"
+      "url": "https://github.com/hondilla/mage-bus.git"
     }
   ],
   "minimum-stability": "dev",
@@ -60,13 +60,6 @@
     "test:phpunit": "vendor/bin/paratest --processes=$(nproc) --display-warnings --display-deprecations --stop-on-warning ",
     "test:infection": "vendor/bin/infection --threads=$(nproc) --skip-initial-tests --coverage=build --show-mutations --logger-github",
     "test": ["@test:phpunit", "@test:infection"]
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Mage\\Framework\\MageServiceProvider"
-      ]
-    }
   },
   "config": {
     "optimize-autoloader": true,

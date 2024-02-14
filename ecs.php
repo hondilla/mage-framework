@@ -58,7 +58,7 @@ use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return ECSConfig::configure()
     ->withParallel()
-    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
+    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests', __DIR__ . '/bootstrap'])
     ->withSets([SetList::PSR_12])
     ->withRules([
         // Imports
