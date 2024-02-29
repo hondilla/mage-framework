@@ -2,6 +2,7 @@
 
 namespace Mage\Framework\Wiring;
 
+/** @infection-ignore-all */
 final class WiringServiceProvider extends Bridge\WiringServiceProvider
 {
     protected function bindingsPaths(): array

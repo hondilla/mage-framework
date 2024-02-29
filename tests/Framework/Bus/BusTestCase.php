@@ -6,8 +6,9 @@ use Illuminate\Foundation\Application;
 use Tests\Framework\Bus\Data\EmptyPatternBusServiceProvider;
 use Tests\Framework\Bus\Data\InvalidBusServiceProvider;
 use Tests\Framework\Bus\Data\ValidBusServiceProvider;
+use Tests\TestCase;
 
-abstract class BusTestCase extends \Tests\TestCase
+abstract class BusTestCase extends TestCase
 {
     /** @psalm-api */
     protected function usesValidBus(Application $app): void

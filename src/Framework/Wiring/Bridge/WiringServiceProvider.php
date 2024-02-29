@@ -4,7 +4,7 @@ namespace Mage\Framework\Wiring\Bridge;
 
 use Illuminate\Support\ServiceProvider;
 use Mage\Framework\Console\Command;
-use Mage\Framework\Console\Scheduler;
+use Mage\Framework\Console\Schedule;
 use Mage\Framework\Wiring\Locator\BindingsLocator;
 use Mage\Framework\Wiring\Locator\CommandLocator;
 use Mage\Framework\Wiring\Locator\MigrationsLocator;
@@ -36,7 +36,7 @@ abstract class WiringServiceProvider extends ServiceProvider
 
         /** @psalm-var \Illuminate\Console\Scheduling\Schedule $schedule */
         $schedule = $this->app->make('Illuminate\Console\Scheduling\Schedule');
-        $scheduler = new Scheduler($schedule);
+        $scheduler = new Schedule($schedule);
 
         map(function (string $command) use ($scheduler): void {
             /** @psalm-var Command $command */

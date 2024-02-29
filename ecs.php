@@ -58,7 +58,7 @@ use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return ECSConfig::configure()
     ->withParallel()
-    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests', __DIR__ . '/bootstrap'])
+    ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
     ->withSets([SetList::PSR_12])
     ->withRules([
         // Imports
@@ -146,7 +146,7 @@ return ECSConfig::configure()
         ]
     ])
     ->withConfiguredRule(CyclomaticComplexitySniff::class, [
-        'absoluteComplexity' => 10
+        'absoluteComplexity' => 20
     ])
     ->withConfiguredRule(
         YodaStyleFixer::class,

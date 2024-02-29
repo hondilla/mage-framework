@@ -41,4 +41,9 @@
     <logging>
         <junit outputFile="build/junit.xml"/>
     </logging>
+    <php>
+        <env name="APP_KEY" value="base64:QCGShWZKvrpszyhCH22msMALYIw1W9hnjYevBVU8kzo="/>
+        <env name="PASSPORT_PRIVATE_KEY" value="/app/tests/Framework/Auth/Data/oauth-private.key"/>
+        <env name="PASSPORT_PUBLIC_KEY" value="/app/tests/Framework/Auth/Data/oauth-public.key"/>
+    </php>
 </phpunit>

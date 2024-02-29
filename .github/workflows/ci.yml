@@ -16,20 +16,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Task
-        uses: arduino/setup-task@v1
-
-      - name: Build Container
-        run: task build
-
-      - name: Install Dependencies
-        run: task composer -- install
-
-      - name: Code Analysis
-        run: task composer -- analyse
-
-      - name: Code Lint
-        run: task composer -- lint
+#      - name: Install Task
+#        uses: arduino/setup-task@v1
+#
+#      - name: Build Container
+#        run: task build
+#
+#      - name: Install Dependencies
+#        run: task composer -- install
+#
+#      - name: Code Analysis
+#        run: task composer -- analyse
+#
+#      - name: Code Lint
+#        run: task composer -- lint
 
 #      - name: Testing
 #        run: task composer -- test

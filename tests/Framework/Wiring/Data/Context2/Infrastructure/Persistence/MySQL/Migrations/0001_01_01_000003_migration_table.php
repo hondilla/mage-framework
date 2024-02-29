@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace Tests\Framework\Wiring\Data\Context2\Infrastructure\Persistence\MySQL\Migrations;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

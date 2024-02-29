@@ -17,5 +17,5 @@ abstract class Command extends \Illuminate\Console\Command
         parent::__construct();
     }
 
-    abstract public static function schedule(Scheduler $scheduler): void;
+    abstract public static function schedule(Schedule $scheduler): void;
 }

@@ -16,9 +16,7 @@ final readonly class EventDispatcher implements Dispatcher
         Locator $locator
     ) {
         each(function (array $handlers, string $event) {
-            if (!$this->eventDispatcher->hasListeners($event)) {
-                each(fn (string $handler) => $this->eventDispatcher->listen($event, $handler), $handlers);
-            }
+            each(fn (string $handler) => $this->eventDispatcher->listen($event, $handler), $handlers);
         }, $locator->mappings());
     }
 

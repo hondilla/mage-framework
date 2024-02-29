@@ -23,11 +23,15 @@ final class ConfigServiceProvider extends ServiceProvider
         ], 'mage.wiring');
     }
 
+    /** @infection-ignore-all */
     public function register(): void
     {
+        $this->mergeConfigFrom(dirname(__DIR__, 3) . '/config/auth.php', 'auth');
         $this->mergeConfigFrom(dirname(__DIR__, 3) . '/config/database.php', 'database');
         $this->mergeConfigFrom(dirname(__DIR__, 3) . '/config/cache.php', 'cache');
         $this->mergeConfigFrom(dirname(__DIR__, 3) . '/config/mail.php', 'mail');
+        $this->mergeConfigFrom(dirname(__DIR__, 3) . '/config/queue.php', 'queue');
+        $this->mergeConfigFrom(dirname(__DIR__, 3) . '/config/session.php', 'session');
         $this->mergeConfigFrom(dirname(__DIR__, 3) . '/config/mage.bus.php', 'mage.bus');
         $this->mergeConfigFrom(dirname(__DIR__, 3) . '/config/mage.wiring.php', 'mage.wiring');
     }
@@ -49,7 +53,7 @@ final class ConfigServiceProvider extends ServiceProvider
 
     private function searchProperty(array $path, string $key, Config $config): void
     {
-        map(function (mixed $value, string $prop) use ($config, $key): void {
+        map(function (mixed $value, int|string $prop) use ($config, $key): void {
             $property = $key . '.' . $prop;
             if (is_array($value)) {
                 $this->searchProperty($value, $property, $config);

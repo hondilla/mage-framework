@@ -42,7 +42,6 @@ final class BindingsLocator
         return reduce(
             /** @psalm-param array<string> $binding */
             function (array $acc, array $binding, string $key) {
-                /** @infection-ignore-all */
                 if (count($binding) === 1) {
                     $acc[$key] = $binding[0];
                 }

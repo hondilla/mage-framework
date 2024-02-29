@@ -5,11 +5,22 @@ ARG GID
 
 RUN apk --update --no-cache add curl git patch
 
-RUN apk --update --no-cache add --virtual deps $PHPIZE_DEPS linux-headers \
- && apk --update --no-cache add icu-dev \
- && pecl install -f xdebug apcu \
- && docker-php-ext-install -j$(nproc) opcache intl \
- && docker-php-ext-enable xdebug apcu opcache intl \
+RUN apk --update --no-cache add --virtual deps $PHPIZE_DEPS linux-headers imagemagick-dev \
+ && apk --update --no-cache add icu-dev mariadb-client mariadb-connector-c-dev imagemagick
+
+#Fix till release on pecl
+RUN curl -L -o /tmp/imagick.tar.gz https://github.com/Imagick/imagick/archive/7088edc353f53c4bc644573a79cdcd67a726ae16.tar.gz \
+    && tar --strip-components=1 -xf /tmp/imagick.tar.gz \
+    && phpize \
+    && ./configure \
+    && make \
+    && make install \
+    && echo "extension=imagick.so" > /usr/local/etc/php/conf.d/ext-imagick.ini \
+    && rm -rf /tmp/*
+
+RUN pecl install -f xdebug apcu \
+ && docker-php-ext-install -j$(nproc) opcache intl pdo pdo_mysql \
+ && docker-php-ext-enable xdebug apcu opcache intl pdo_mysql \
  && apk del --purge deps
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"

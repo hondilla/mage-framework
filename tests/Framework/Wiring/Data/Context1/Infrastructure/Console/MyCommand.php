@@ -3,7 +3,7 @@
 namespace Tests\Framework\Wiring\Data\Context1\Infrastructure\Console;
 
 use Mage\Framework\Console\Command;
-use Mage\Framework\Console\Scheduler;
+use Mage\Framework\Console\Schedule;
 
 /**
  * @psalm-api
@@ -13,7 +13,7 @@ class MyCommand extends Command
 {
     protected $signature = 'my:command1';
 
-    public static function schedule(Scheduler $scheduler): void
+    public static function schedule(Schedule $scheduler): void
     {
         $scheduler->arguments([])->everyMinute();
     }

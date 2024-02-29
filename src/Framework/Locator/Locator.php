@@ -38,11 +38,9 @@ final readonly class Locator
 
     private function matchFiles(string $pattern, SplFileInfo $file): bool
     {
-        /** @infection-ignore-all */
         if ($pattern === '') {
             return false;
         }
-        /** @infection-ignore-all */
         return preg_match($pattern, $file->getPathname()) === 1;
     }
 

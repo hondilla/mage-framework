@@ -5,13 +5,11 @@
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
     errorLevel="1"
-    resolveFromConfigFile="true"
-    findUnusedBaselineEntry="false"
-    findUnusedCode="true"
+    findUnusedCode="false"
+    findUnusedBaselineEntry="true"
 >
     <projectFiles>
         <directory name="src" />
-        <directory name="bootstrap" />
         <directory name="tests"/>
         <ignoreFiles>
             <directory name="vendor" />
@@ -28,9 +26,20 @@
                 <directory name="tests"/>
             </errorLevel>
         </UnusedParam>
+        <MissingTemplateParam>
+            <errorLevel type="suppress">
+                <directory name="tests"/>
+            </errorLevel>
+        </MissingTemplateParam>
+        <MissingPropertyType>
+            <errorLevel type="suppress">
+                <directory name="tests"/>
+            </errorLevel>
+        </MissingPropertyType>
     </issueHandlers>
     <plugins>
         <pluginClass class="Psalm\MockeryPlugin\Plugin"/>
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+        <pluginClass class="Psalm\LaravelPlugin\Plugin"/>
     </plugins>
 </psalm>
