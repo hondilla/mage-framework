@@ -3,7 +3,7 @@
 return [
     'paths' => [
         'path' => base_path('src'),
-        'pattern' => '/.*\/Application\/.*/',
+        'pattern' => '/^.*\/Application\/[^\/]+$/',
     ],
     'command' => [
         'middlewares' => []

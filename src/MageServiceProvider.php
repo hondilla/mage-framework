@@ -1,17 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Mage\Framework;
+namespace Mage;
 
 use Illuminate\Support\ServiceProvider;
-use Mage\Framework\Shared\Infrastructure\Providers\BusServiceProvider;
-use Mage\Framework\Shared\Infrastructure\Providers\ConfigServiceProvider;
+use Mage\Framework\FrameworkServiceProvider;
 
 /** @psalm-api */
 final class MageServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->app->register(ConfigServiceProvider::class);
-        $this->app->register(BusServiceProvider::class);
+        $this->app->register(FrameworkServiceProvider::class);
     }
 }
